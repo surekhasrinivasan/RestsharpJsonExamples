@@ -23,6 +23,16 @@ namespace JsonDemoExample1
 
             JObject obj = JObject.Parse(json);
             Console.WriteLine(obj);
+
+            // Parsing a JSON array from string
+            string str = @"[
+                'Small',
+                'Medium',
+                'Large'
+            ]";
+
+            JArray jarray = JArray.Parse(str);
+            Console.WriteLine(jarray);
         }
     }
 }
