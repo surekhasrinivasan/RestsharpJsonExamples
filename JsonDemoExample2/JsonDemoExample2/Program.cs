@@ -21,21 +21,38 @@ namespace JsonDemoExample2
         static void Main(string[] args)
         {
             // Serialize an object to JSON
-            Account account = new Account()
-            {
-                Email = "james@example.com",
-                Active = true,
-                CreatedDate = new DateTime(2013, 1, 20, 0, 0, 0, DateTimeKind.Utc),
-                Roles = new List<string>
-                {
-                    "User",
-                    "Admin"
-                }
-            };
+            //Account account = new Account()
+            //{
+            //    Email = "james@example.com",
+            //    Active = true,
+            //    CreatedDate = new DateTime(2013, 1, 20, 0, 0, 0, DateTimeKind.Utc),
+            //    Roles = new List<string>
+            //    {
+            //        "User",
+            //        "Admin"
+            //    }
+            //};
 
-            string json = JsonConvert.SerializeObject(account, Formatting.Indented);
+            //string json = JsonConvert.SerializeObject(account, Formatting.Indented);
 
-            Console.WriteLine(json);
+            //Console.WriteLine(json);
+
+
+            // Deserialize JSON to Object 
+            string jsonstr = @"{
+                    'Email': 'james@example.com',
+                    'Active': 'true',
+                    'CreatedDate': '2013-01-20',
+                    'Roles': [
+                        'User',
+                        'Admin'
+                    ]
+              }";
+
+            Account acct = JsonConvert.DeserializeObject<Account>(jsonstr);
+
+            Console.WriteLine(acct.Email);
+            Console.WriteLine(acct.CreatedDate);
         }
     }
 }
