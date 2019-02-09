@@ -53,6 +53,7 @@ namespace JsonDemoExample2
 
             Console.WriteLine(acct.Email);
             Console.WriteLine(acct.CreatedDate);
+            Console.WriteLine(acct.Active);
         }
     }
 }
